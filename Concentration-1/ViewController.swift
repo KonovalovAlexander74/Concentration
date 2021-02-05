@@ -8,6 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    themeIndex = emojiThemesCollection.count.arc4random
+    UpdateViewFromModel()
+  }
 
   var numberOfPairsOfCards: Int {
     return cardButtons.count / 2
@@ -26,6 +32,7 @@ class ViewController: UIViewController {
   
   
   @IBAction private func restartButton() {
+    themeIndex = emojiThemesCollection.count.arc4random
     game.restart()
     UpdateViewFromModel()
     flipCount = 0
@@ -55,17 +62,36 @@ class ViewController: UIViewController {
   }
   
 //  private var emojiContainer = ["🥷", "🎅🏻", "🗿", "📚", "🍉", "🍈", "🍔", "🍺", "🤖" , "🌚"]
-  private var emojiContainer = "🥷🎅🏻🗿📚🍉🍈🍔🍺🤖🌚"
+  var emojiThemesCollection = [
+    "🥷🎅🏻🗿📚🍉🍈🍔🍺🤖🌚",
+    "🐶🐱🐰🦊🐻🐵🐷🐮🐯🦁",
+    "🏀🥎🪃⛸🎱🥏⚽️🥊🛹🚴🏻‍♀️",
+    "🚙🚞🚒🏎🚠🚲🛴🛵🦼🚛",
+    "📞☎️⏰📺📻📟⌚️📱💻🕹",
+    "❤️🧡💛💚💙💜🖤🤍🤎💔",
+    "🕐🕑🕒🕓🕔🕕🕖🕗🕘🕤",
+    "🐊🐪🐏🐃🦍🦧🦃🐕🦒🐆",
+    "😅🥰😈😎😡🥶😱🤢😇🥺"]
+  
+  private var themeIndex = 0 {
+    didSet {
+      emojiCollection = emojiThemesCollection[themeIndex]
+      emoji = [Card:String]()
+    }
+  }
+  
+  private var emojiCollection = "🥷🎅🏻🗿📚🍉🍈🍔🍺🤖🌚"
   
   private var emoji = [Card:String]() //  Dictionary
   
   private func emoji(for card: Card) -> String {
-    if emoji[card] == nil, emojiContainer.count > 0 {
-      let randomStringIndex = emojiContainer.index(emojiContainer.startIndex, offsetBy: emojiContainer.count.arc4random)
-      emoji[card] = String(emojiContainer.remove(at: randomStringIndex))
+    if emoji[card] == nil, emojiCollection.count > 0 {
+      let randomStringIndex = emojiCollection.index(emojiCollection.startIndex, offsetBy: emojiCollection.count.arc4random)
+      emoji[card] = String(emojiCollection.remove(at: randomStringIndex))
     }
     return emoji[card] ?? "?"
   }
+  
 }
 
 extension Int {

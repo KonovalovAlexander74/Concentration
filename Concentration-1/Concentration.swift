@@ -64,8 +64,6 @@ struct Concentration
       let card = Card()
       cards += [card, card]
       cards.shuffle()
-    }
-    /// To Do Shuffle the cards
-    
+    }    
   }
 }
