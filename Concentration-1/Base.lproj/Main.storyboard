@@ -170,19 +170,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="oGN-92-FwB">
-                                <rect key="frame" x="35.333333333333343" y="762" width="319.66666666666663" height="48"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RrR-oV-oFk">
+                                <rect key="frame" x="16" y="768" width="358" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLIPS: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYc-1D-4dj">
-                                        <rect key="frame" x="0.0" y="0.0" width="145.33333333333334" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="FLIPS: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYc-1D-4dj">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <color key="textColor" systemColor="systemYellowColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HJ-9p-vd1">
-                                        <rect key="frame" x="174.33333333333331" y="0.0" width="145.33333333333331" height="48"/>
+                                        <rect key="frame" x="122" y="0.0" width="114" height="42"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <state key="normal" title="RESTART">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -190,6 +190,12 @@
                                             <action selector="restartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruf-nU-ccm"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="SCORE: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-a5-TJd">
+                                        <rect key="frame" x="244" y="0.0" width="114" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -197,15 +203,17 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="f8K-wz-9Q9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1i0-JG-7fX"/>
-                            <constraint firstItem="oGN-92-FwB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8dP-G7-gHn"/>
+                            <constraint firstItem="RrR-oV-oFk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f8K-wz-9Q9" secondAttribute="bottom" id="9qY-4V-PAw"/>
                             <constraint firstItem="f8K-wz-9Q9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Bfd-i3-06T"/>
-                            <constraint firstItem="oGN-92-FwB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f8K-wz-9Q9" secondAttribute="bottom" id="Od1-7J-sqQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RrR-oV-oFk" secondAttribute="bottom" id="E4Y-Dv-3V4"/>
+                            <constraint firstItem="RrR-oV-oFk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fDy-YM-a3K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RrR-oV-oFk" secondAttribute="trailing" constant="16" id="fay-92-EwE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f8K-wz-9Q9" secondAttribute="trailing" constant="16" id="lEX-W3-hbH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oGN-92-FwB" secondAttribute="bottom" id="ob2-na-Yb0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="MYc-1D-4dj" id="Lkv-77-mjD"/>
+                        <outlet property="gameScoreLabel" destination="1JZ-a5-TJd" id="Giz-I9-KcK"/>
                         <outletCollection property="cardButtons" destination="fMN-6e-kBj" collectionClass="NSMutableArray" id="ZbL-33-qsk"/>
                         <outletCollection property="cardButtons" destination="nre-bI-KNT" collectionClass="NSMutableArray" id="Qvh-0G-jeX"/>
                         <outletCollection property="cardButtons" destination="3wC-vs-89h" collectionClass="NSMutableArray" id="bK1-op-T8B"/>
