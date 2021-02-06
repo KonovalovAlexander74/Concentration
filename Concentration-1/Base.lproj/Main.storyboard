@@ -187,7 +187,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="restartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruf-nU-ccm"/>
+                                            <action selector="restart" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruf-nU-ccm"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="SCORE: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-a5-TJd">
@@ -214,6 +214,7 @@
                     <connections>
                         <outlet property="flipCountLabel" destination="MYc-1D-4dj" id="Lkv-77-mjD"/>
                         <outlet property="gameScoreLabel" destination="1JZ-a5-TJd" id="Giz-I9-KcK"/>
+                        <outlet property="restartButton" destination="7HJ-9p-vd1" id="hRI-9Z-dj2"/>
                         <outletCollection property="cardButtons" destination="fMN-6e-kBj" collectionClass="NSMutableArray" id="ZbL-33-qsk"/>
                         <outletCollection property="cardButtons" destination="nre-bI-KNT" collectionClass="NSMutableArray" id="Qvh-0G-jeX"/>
                         <outletCollection property="cardButtons" destination="3wC-vs-89h" collectionClass="NSMutableArray" id="bK1-op-T8B"/>
