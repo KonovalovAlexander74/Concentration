@@ -15,11 +15,25 @@ class ViewController: UIViewController {
   
   private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
   
-  @IBOutlet private weak var flipCountLabel: UILabel!
+  @IBOutlet private weak var flipCountLabel: UILabel! {
+    didSet {
+      updateFlipCountLabel()
+    }
+  }
+  
   private(set) var flipCount = 0  {
     didSet {
-      flipCountLabel.text = "FLIPS: \(flipCount)"
+      updateFlipCountLabel()
     }
+  }
+  
+  private func updateFlipCountLabel() {
+    let attributes: [NSAttributedString.Key:Any] = [
+      .strokeWidth : 5.0,
+      .strokeColor : #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
+    ]
+    let attributedString = NSAttributedString(string: "FLIPS: \(flipCount)", attributes: attributes)
+    flipCountLabel.attributedText = attributedString
   }
   
   @IBOutlet private var cardButtons: [UIButton]!
