@@ -41,7 +41,7 @@ class ViewController: UIViewController {
   
   @IBAction private func restartButton() {
     game.restart()
-    UpdateViewFromModel()
+    updateViewFromModel()
     flipCount = 0
   }
   
@@ -49,11 +49,11 @@ class ViewController: UIViewController {
     flipCount += 1
     if let cardNumber = cardButtons.firstIndex(of: sender) { // Get the index of chosen card
       game.chooseCard(at: cardNumber)
-      UpdateViewFromModel()
+      updateViewFromModel()
     }
   }
   
-  private func UpdateViewFromModel() {
+  private func updateViewFromModel() {
     for index in cardButtons.indices {
       let button = cardButtons[index]
       let card = game.cards[index]
